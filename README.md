@@ -45,3 +45,12 @@ Een multi-tasking OS kan meerdere processen tegelijk draaien. Het geeft de CPU d
 Multi-threading is een manier om binnen een proces toch verschillende *code-paden* te hebben en dingen gelijktijdig te doen. De evolutie naar multi-core CPU's heeft ervoor gezorgd dat meer software op een multi-threaded manier wordt geprogrammeerd.
 
 Threads behoren tot hetzelfde proces maar kunnen b.v. gepauzeerd worden terwijl ze wachten op data. In het beste geval kunnen meerdere threads effectief gelijktijdig worden uitgevoerd door de verschillende CPU-cores. Soms moeten ze natuurlijk met elkaar overeenstemmen en moet een thread wachten op een andere thread.
+
+## DLL's
+**Dynamically Loadable Libraries** zijn *bibliotheken* met uitvoerbare code die door het OS *dynamisch* in het RAM-geheugen kunnen geladen worden. 
+
+Een `.exe`-bestand dat van schijf wordt uitgevoerd, zal door het OS worden uitgelezen en de uitvoerbare code zal ergens in het RAM-geheugen worden gezet. Zeer vaak gebruiken `.exe`'s ook nog op het systeem aanwezige `.dll`-bestanden voor extra uitvoerbare code. Het OS zorgt ervoor dat alle uitvoerbare code die in een proces nodig heeft, ergens in het geheugen kan terugvinden.
+
+DLL's zijn ook een manier waarmee processen een stukje uitvoerbare code kunnen delen met elkaar. 
+
+> Denk b.v. aan het dialoogvenster om bestanden te openen in Windows. Vele applicaties gebruiken dit. Dankzij DLL's kan de uitvoerbare code voor zo'n dialoogvenster slechts 1x in het RAM-geheugen aanwezig zijn, terwijl toch verschillende van de code gebruik kunnen maken.
