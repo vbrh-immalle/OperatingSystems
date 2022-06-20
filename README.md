@@ -49,8 +49,11 @@ Threads behoren tot hetzelfde proces maar kunnen b.v. gepauzeerd worden terwijl 
 ## DLL's
 **Dynamically Loadable Libraries** zijn *bibliotheken* met uitvoerbare code die door het OS *dynamisch* in het RAM-geheugen kunnen geladen worden. 
 
-Een `.exe`-bestand dat van schijf wordt uitgevoerd, zal door het OS worden uitgelezen en de uitvoerbare code zal ergens in het RAM-geheugen worden gezet. Zeer vaak gebruiken `.exe`'s ook nog op het systeem aanwezige `.dll`-bestanden voor extra uitvoerbare code. Het OS zorgt ervoor dat alle uitvoerbare code die in een proces nodig heeft, ergens in het geheugen kan terugvinden.
+Een `.exe`-bestand dat van schijf wordt uitgevoerd, zal door het OS worden uitgelezen en de uitvoerbare code zal ergens in het RAM-geheugen worden gezet. Zeer vaak gebruiken `.exe`'s op het systeem aanwezige `.dll`-bestanden waarin extra uitvoerbare code staat. Het OS zorgt ervoor dat het proces alle uitvoerbare code die het nodig heeft (afkomstig v.d. initiële `.exe` én van extra `.dll`'s) ergens in het geheugen terug te vinden is.
 
-DLL's zijn ook een manier waarmee processen een stukje uitvoerbare code kunnen delen met elkaar. 
+Wanneer een volgend proces dezelfde `.dll` gebruikt, is het niet meer nodig om deze uitvoerbare code nog eens in te laden. Het OS kan dit tweede proces gebruik laten maken van hetzelfde stukje RAM-geheugen waar de uitvoerbare code van de `.dll` toch al stond.
 
-> Denk b.v. aan het dialoogvenster om bestanden te openen in Windows. Vele applicaties gebruiken dit. Dankzij DLL's kan de uitvoerbare code voor zo'n dialoogvenster slechts 1x in het RAM-geheugen aanwezig zijn, terwijl toch verschillende van de code gebruik kunnen maken.
+> Denk b.v. aan het dialoogvenster om bestanden te openen in Windows. Vele applicaties gebruiken dit. Dankzij DLL's kan de uitvoerbare code voor zo'n dialoogvenster slechts 1x in het RAM-geheugen aanwezig zijn, terwijl toch verschillende programma's van de code gebruik kunnen maken.
+
+DLL's zijn ook een manier waarmee processen (ook nadat ze gestart zijn, b.v. op verzoek v.d. gebruiker) extra programma-functionaliteit onder de vorm van **plugins** kunnen inladen of weer verwijderen.
+
